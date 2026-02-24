@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batter Bliss | By Khadija</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/Visuals/Logo/logo.png">
+</head>
+
+<body>
+
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="brand-group">
+                <img src="assets/Visuals/Logo/logo.png" alt="Batter Bliss Logo" class="nav-logo">
+                <h1 class="nav-title">Batter Bliss By Khadija</h1>
+            </a>
+
+            <div class="nav-menu-toggle">
+                <span class="menu-bar"></span>
+                <span class="menu-bar"></span>
+            </div>
+        </div>
+    </nav>
+    <header class="hero">
+        <div class="hero-overlay">
+            <h1>Serving smiles <br>in every slice</h1>
+            <p>Khadija’s bakes—made with mohabbat & magic</p>
+            <div class="hero-cta">
+
+                <a href="https://www.instagram.com/batter_bliss_bykhadija/" class="btn btn-outline"
+                    target="_blank">Instagram
+                </a>
+                <a href="assets/menu.jpg" download class="btn btn-secondary-outline">
+                    Download Menu
+                </a>
+            </div>
+        </div>
+    </header>
+    <section id="cakes" class="cakes-module">
+        <div class="cakes-header-video">
+            <video autoplay muted loop playsinline class="bg-video">
+                <source src="assets/Visuals/Cakes/cakeBG.mp4" type="video/mp4">
+            </video>
+            <div class="video-header-content">
+                <span class="section-tag">The Art of Baking</span>
+                <h2>Signature Cakes</h2>
+                <div class="mini-divider"></div>
+                <p>Bespoke designs crafted for your most significant milestones.</p>
+            </div>
+        </div>
+
+        <div class="portfolio-container">
+            <div class="slideshow-frame" id="cakes-slides">
+                <div class="slide active">
+                    <img src="assets/Visuals/Cakes/cake1.jpg" alt="Bespoke Celebration Cake">
+                </div>
+                <div class="slide active">
+                    <img src="assets/Visuals/Cakes/cake2.jpg" alt="Bespoke Celebration Cake">
+                </div>
+                <div class="slide">
+                    <img src="assets/Visuals/Cakes/cake3.jpg" alt="Artisan Floral Cake">
+                </div>
+                <div class="slide">
+                    <img src="assets/Visuals/Cakes/cake4.jpg" alt="Luxury Wedding Cake">
+                </div>
+                <div class="slide">
+                    <img src="assets/Visuals/Cakes/cake5.jpg" alt="Luxury Wedding Cake">
+                </div>
+
+                <div class="slideshow-nav">
+                    <button class="nav-arrow prev" onclick="moveSlide(-1)">&#10094;</button>
+                    <button class="nav-arrow next" onclick="moveSlide(1)">&#10095;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="treats" class="treats-module">
+
+        <div class="dark-banner">
+            <div class="banner-content">
+                <span class="subtitle-light">Decadent & Handcrafted</span>
+                <h2>Cookies & Brownies</h2>
+                <div class="accent-line"></div>
+                <p>From brown-butter classics to gourmet cheesecake fusions.</p>
+            </div>
+        </div>
+
+        <div class="slideshow-wrapper">
+            <div class="slideshow-box" id="treat-gallery">
+                <div class="t-slide active">
+                    <img src="assets/Visuals/Cookies/cookies.jpg" alt="Artisan Cookies">
+                    <div class="t-overlay">
+                        <h3>Specialty Cookies</h3>
+                        <p>Featuring Pistachio, Oreo, and Vegan Matcha White selections.</p>
+                    </div>
+                </div>
+
+                <div class="t-slide">
+                    <img src="assets/Visuals/Brownies/brownies.jpg" alt="Gourmet Brownies">
+                    <div class="t-overlay">
+                        <h3>Gourmet Brownies</h3>
+                        <p>Signature Biscoff and Oreo Cheesecake brownie fusions.</p>
+                    </div>
+                </div>
+
+                <button class="t-prev" onclick="changeTreatSlide(-1)">&#10094;</button>
+                <button class="t-next" onclick="changeTreatSlide(1)">&#10095;</button>
+            </div>
+        </div>
+        <div class="packaging-highlight">
+            <div class="packaging-container">
+                <div class="video-frame">
+                    <video autoplay muted loop playsinline class="packaging-video">
+                        <source src="assets/Visuals/Brownies/brownies.mp4" type="video/mp4">
+                    </video>
+                    <div class="packaging-caption">
+                        <span class="tag">The Final Touch</span>
+                        <h3>Packaged with Care</h3>
+                        <p>Ensuring every treat arrives as fresh and beautiful as when it left the oven.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="cinnamon-collage">
+        <div class="collage-text">
+            <h3>Cinnamon Rolls</h3>
+            <p>Our signature brioche dough, swirled with premium cinnamon and topped with handcrafted glazes.</p>
+            <ul class="flavor-list">
+                <li>• Classic Butter</li>
+                <li>• Creamy Cheese</li>
+                <li>• Rich Chocolate</li>
+                <li>• Salted Caramel</li>
+            </ul>
+        </div>
+        <div class="collage-images">
+            <div class="img-large"><img src="assets/Visuals/Cinnamon Rolls/cinnamonRolls.jpg" alt="Cinnamon Rolls">
+            </div>
+            <div class="img-accent"><img src="assets/Visuals/Cinnamon Rolls/cinnamonRolls2.jpg" alt="Cinnamon Detail">
+            </div>
+        </div>
+    </div>
+
+    <div class="donut-peek-container">
+        <div class="donut-header">
+            <h3>Hand-Dipped Donuts</h3>
+        </div>
+        <div class="snap-slider">
+            <div class="snap-item">
+                <img src="assets/Visuals/Donuts/donutsFilledChoco.jpg" alt="Chocolate Donut">
+                <span>Choco Filled</span>
+            </div>
+            <div class="snap-item">
+                <img src="assets/Visuals/Donuts/donuts.jpg" alt="Vanilla Donut">
+                <span>Creamy Vanilla</span>
+            </div>
+            <div class="snap-item">
+                <img src="assets/Visuals/Donuts/ChocolateGlazed.jpg" alt="Strawberry Donut">
+                <span>Chocolate Glaze</span>
+            </div>
+
+        </div>
+        <p class="swipe-hint">Swipe to explore flavors →</p>
+    </div>
+    </section>
+    <section id="pizza" class="savory-module">
+        <div class="savory-header">
+            <span class="tag-dark">Savory Selection</span>
+            <h2>Artisan Pizza</h2>
+            <div class="short-line"></div>
+            <p class="savory-intro">Hand-stretched dough topped with premium ingredients, baked to perfection.</p>
+        </div>
+
+        <div class="slideshow-container full-mobile" id="pizza-slideshow">
+
+            <div class="slides pizza-slide fade">
+                <img src="assets/Visuals/Pizza/pizza3.jpg" alt="Chicken Supreme Pizza">
+                <div class="slide-overlay-compact">
+                    <h3>Chicken Supreme</h3>
+                    <p>Signature veggies & succulent chicken</p>
+                </div>
+            </div>
+
+            <div class="slides pizza-slide fade">
+                <img src="assets/Visuals/Pizza/pizzaChickenTikka.jpg" alt="Chicken Tikka Pizza">
+                <div class="slide-overlay-compact">
+                    <h3>Chicken Tikka</h3>
+                    <p>Traditional spices & artisanal crust</p>
+                </div>
+            </div>
+
+            <div class="slides pizza-slide fade">
+                <img src="assets/Visuals/Pizza/pizza2.jpg" alt="Dead Cheesy Pizza">
+                <div class="slide-overlay-compact">
+                    <h3>Dead Cheesy</h3>
+                    <p>The ultimate premium cheese blend</p>
+                </div>
+            </div>
+
+            <div class="nav-controls-overlay">
+                <button class="prev" onclick="moveSlides(-1, 'pizza-slideshow')">&#10094;</button>
+                <button class="next" onclick="moveSlides(1, 'pizza-slideshow')">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-module">
+        <div class="contact-container">
+
+            <div class="dm-highlight">
+                <div class="insta-icon-frame">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </div>
+                <h2>DM for Order</h2>
+                <p class="dm-subtext">We receive your Instagram requests directly via email for a faster response.</p>
+                <a href="https://www.instagram.com/batter_bliss_bykhadija/" class="insta-link"
+                    target="_blank">@batter_bliss_bykhadija</a>
+            </div>
+
+            <div class="form-divider">
+                <span>OR SEND AN EMAIL</span>
+            </div>
+
+            <form action="https://api.web3forms.com/submit" method="POST" class="inquiry-form">
+                <input type="hidden" name="access_key" value="b510485c-6137-46cf-afc1-a91ee48853d7">
+                <div class="input-group">
+                    <label for="user-name">Name</label>
+                    <input type="text" id="user-name" name="name" placeholder="Your Name" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="user-email">Email</label>
+                    <input type="email" id="user-email" name="email" placeholder="Email Address" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="user-message">Order Details</label>
+                    <textarea id="user-message" name="message" placeholder="What can we bake for you today?" rows="5"
+                        required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Inquiry</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="footer-logo">Batter Bliss</div>
+        <p class="footer-tagline">By Khadija | Artisanal Treats & Savories</p>
+        <div class="footer-meta">
+            <span>© 2026 All Rights Reserved</span>
+            <div class="footer-links">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/Javascript/script.js"></script>
+</body>
+
+</html>

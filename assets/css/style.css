@@ -1,0 +1,973 @@
+/* style.css */
+/* UPDATED BRANDING ACCORDING TO LOGO */
+:root {
+    --warm-cream: #FAF7F2;
+    /* Main Background */
+    --cocoa-brown: #4E3629;
+    /* Primary Branding & Buttons */
+    --soft-taupe: #7A6A5E;
+    /* Body Text */
+    --honey-gold: #C5A059;
+    /* Accents & Icons */
+    --sand-border: #E8E0D5;
+    /* Subtle Dividers */
+    --white: #ffffff;
+
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--warm-cream);
+    color: var(--cocoa-brown);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+}
+
+/* Update your headings to match the logo weight */
+h1,
+h2,
+h3 {
+    font-family: var(--font-serif);
+    letter-spacing: -0.02em;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.slide img,
+.pizza-slide img {
+    filter: sepia(10%) contrast(105%);
+}
+
+/* Navbar Base Container */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(250, 247, 242, 0.95);
+    /* Semi-transparent Cream */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--sand-border);
+    z-index: 1000;
+    padding: 0.6rem 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: flex-start;
+    /* Pushes brand to the left */
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Brand Alignment */
+.brand-group {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 15px;
+    /* Spacing between Logo and Title */
+}
+
+.nav-logo {
+    height: 45px;
+    /* Fixed height for consistency */
+    width: auto;
+    display: block;
+}
+
+.nav-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #483C32;
+    /* Taupe Branding Color */
+    letter-spacing: -0.5px;
+    white-space: nowrap;
+    /* Prevents title from wrapping on small screens */
+}
+
+/* Tablet & Desktop Adjustments */
+@media (min-width: 768px) {
+    .nav-logo {
+        height: 55px;
+    }
+
+    .nav-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* style.css */
+.hero {
+    height: 85vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/assets/Visuals/heroBg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+    padding: 0 10%;
+}
+.hero-cta{
+    margin-top: 1rem;
+}
+
+.brand-tagline {
+    font-size: 0.8rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.hero h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--warm-cream);
+    color: var(--warm-cream);
+}
+/* Updated Hero CTA Styles */
+.hero-cta {
+    display: flex;
+    gap: 15px;
+    /* Spacing between the two buttons */
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+/* Primary Button (Solid Cocoa Brown) */
+
+
+/* Secondary Button (Outline Honey Gold) */
+.btn-secondary-outline {
+    background-color: transparent;
+    color: var(--warm-cream);
+    /* */
+    border: 1px solid var(--warm-cream);
+    transition: all 0.3s ease;
+}
+
+
+
+/* Mobile Adjustment */
+@media (max-width: 480px) {
+    .hero-cta {
+        flex-direction: column;
+        /* Stacks buttons on small screens */
+        padding: 0 20px;
+    }
+
+    .btn {
+        width: 100%;
+        /* Full width buttons for easier thumb-tapping */
+        text-align: center;
+    }
+}
+
+/* Cakes Module Styling */
+.cakes-module {
+    background-color: var(--white);
+    padding-bottom: 5rem;
+}
+
+/* Part A: Video Header */
+.cakes-header-video {
+    position: relative;
+    height: 50vh;
+    min-height: 400px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+}
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    filter: brightness(0.6);
+    /* Ensures text readability */
+}
+
+.video-header-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 10%;
+}
+
+.section-tag {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.video-header-content h2 {
+    font-family: var(--font-serif);
+    color: #FAF7F2;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin: 1rem 0;
+}
+.mini-divider,
+.short-line {
+    background-color: var(--honey-gold);
+    height: 1.5px;
+    opacity: 0.8;
+}
+
+.mini-divider {
+    width: 60px;
+    margin: 0 auto 1.5rem;
+}
+
+/* Part B: Slideshow */
+.portfolio-container {
+    max-width: 1100px;
+    margin: -60px auto 0;
+    /* Creates an overlap effect for a boutique look */
+    padding: 0 5%;
+    position: relative;
+    z-index: 5;
+}
+
+.slideshow-frame {
+    position: relative;
+    aspect-ratio: 4/5;
+    /* Preferred mobile-first aspect ratio */
+    background: var(--taupe);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .slideshow-frame {
+        aspect-ratio: 16/9;
+        /* Scales to wide-screen for desktop */
+    }
+}
+
+.slide {
+    display: none;
+    height: 100%;
+    width: 100%;
+
+}
+
+.slide.active {
+    display: block;
+    animation: fadeEffect 1s;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@keyframes fadeEffect {
+    from {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Navigation */
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    border: none;
+    color: var(--taupe);
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+
+.prev {
+    left: 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.next {
+    right: 0;
+    border-radius: 4px 0 0 4px;
+}
+
+.nav-arrow:hover {
+    background: var(--white);
+}
+
+
+/* Treats Module */
+.treats-module {
+    background-color: var(--cream);
+    padding-bottom: 4rem;
+}
+
+/* Dark Banner Header */
+.dark-banner {
+    background-color: #2D241E;
+    /* A deep, chocolate-taupe */
+    color: var(--white);
+    padding: 100px 20px;
+    text-align: center;
+    margin-bottom: -40px;
+    /* Slight overlap with slideshow */
+}
+
+.subtitle-light {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 0.7rem;
+    opacity: 0.7;
+}
+
+.dark-banner h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin: 1rem 0;
+}
+
+.accent-line {
+    width: 40px;
+    height: 1px;
+    background-color: var(--rose);
+    margin: 0 auto 1.5rem;
+}
+
+.dark-banner p {
+    font-weight: 300;
+    max-width: 500px;
+    margin: 0 auto;
+    opacity: 0.8;
+}
+
+/* Treat Slideshow */
+.slideshow-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.slideshow-box {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    aspect-ratio: 1/1;
+    /* Professional square format for treats */
+}
+
+.t-slide {
+    display: none;
+    height: 100%;
+}
+
+.t-slide.active {
+    display: block;
+    animation: slideFade 0.8s ease-in-out;
+}
+
+.t-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Text Overlay on Slides */
+.t-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 50px 20px 30px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+    text-align: center;
+}
+
+.t-overlay h3 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.t-overlay p {
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+/* Controls */
+.t-prev,
+.t-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 20px;
+    z-index: 10;
+}
+
+.t-next {
+    right: 0;
+}
+
+.t-prev {
+    left: 0;
+}
+
+@keyframes slideFade {
+    from {
+        opacity: 0.5;
+        transform: scale(1.05);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Packaging Highlight Section */
+.packaging-highlight {
+    padding: 60px 0;
+    background-color: var(--white);
+    /* White background to make the video "pop" */
+    display: flex;
+    justify-content: center;
+}
+
+.packaging-container {
+    width: 90%;
+    max-width: 900px;
+}
+
+.video-frame {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: var(--taupe);
+    box-shadow: 0 15px 35px rgba(72, 60, 50, 0.1);
+}
+
+.packaging-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 16/9;
+    /* Standard cinematic ratio */
+    object-fit: cover;
+    opacity: 0.9;
+}
+
+/* Caption Overlay */
+.packaging-caption {
+    padding: 30px;
+    text-align: center;
+    background-color: var(--white);
+    border-top: 1px solid rgba(72, 60, 50, 0.05);
+}
+
+.packaging-caption .tag {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--rose);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.packaging-caption h3 {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    color: var(--taupe);
+    margin-bottom: 10px;
+}
+
+.packaging-caption p {
+    font-size: 0.95rem;
+    color: var(--taupe);
+    opacity: 0.8;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Desktop Adjustment */
+@media (min-width: 768px) {
+    .packaging-caption {
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+        max-width: 350px;
+        text-align: left;
+        padding: 25px;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        border: none;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .packaging-caption .tag {
+        margin-bottom: 5px;
+    }
+}
+
+/* Morning Module */
+.morning-module {
+    padding: 60px 0;
+    background-color: var(--cream);
+}
+
+.section-header-simple {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.tag-dark {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--taupe);
+    opacity: 0.6;
+}
+
+.short-line {
+    width: 30px;
+    margin: 10px auto;
+}
+
+/* Cinnamon Collage */
+.cinnamon-collage {
+    display: flex;
+    flex-direction: column;
+    padding: 0 5%;
+    margin-bottom: 60px;
+}
+
+.collage-text {
+    margin-bottom: 30px;
+}
+
+.collage-text h3 {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.flavor-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 15px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.collage-images {
+    position: relative;
+    height: 350px;
+}
+
+.img-large {
+    width: 80%;
+    height: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.img-accent {
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    width: 45%;
+    height: 60%;
+    border: 5px solid var(--cream);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.collage-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Donut Snap Slider */
+.donut-peek-container {
+    padding-left: 5%;
+    /* Aligns with the collage */
+}
+
+.donut-header h3 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.snap-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 15px;
+    padding-bottom: 20px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.snap-slider::-webkit-scrollbar {
+    display: none;
+    /* Keep it clean on mobile */
+}
+
+.snap-item {
+    scroll-snap-align: start;
+    flex: 0 0 75%;
+    /* The "Peek" - next slide shows 25% */
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.snap-item img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.snap-item span {
+    display: block;
+    padding: 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.swipe-hint {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.4;
+    margin-top: 10px;
+}
+
+/* Savory Module Styling */
+/* Savory Section Base */
+.savory-module {
+    background-color: var(--cream);
+    padding: 60px 0;
+}
+
+.savory-header {
+    text-align: center;
+    padding: 0 20px;
+    margin-bottom: 30px;
+}
+
+.savory-header h2 {
+    font-family: var(--font-serif);
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.savory-intro {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Full-Width Mobile Logic */
+.full-mobile {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.pizza-slide img {
+    width: 100vw;
+    aspect-ratio: 16/9;
+    /* Cinematic landscape ratio for mobile */
+    object-fit: cover;
+    display: block;
+}
+
+/* Compact Overlay: High Readability, Low Noise */
+.slide-overlay-compact {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px 20px 20px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+    color: var(--white);
+    pointer-events: none;
+    /* Allows clicks to pass through if needed */
+}
+
+.slide-overlay-compact h3 {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+}
+
+.slide-overlay-compact p {
+    font-size: 0.85rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* Professional Nav Controls */
+.nav-controls-overlay button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border: none;
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    z-index: 10;
+    transition: background 0.3s;
+}
+
+.prev {
+    left: 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.next {
+    right: 0;
+    border-radius: 4px 0 0 4px;
+}
+
+/* Responsive Upgrade: Desktop Look */
+@media (min-width: 768px) {
+    .full-mobile {
+        width: 90%;
+        max-width: 1100px;
+        margin: 0 auto;
+        border-radius: 12px;
+    }
+
+    .pizza-slide img {
+        aspect-ratio: 21/9;
+        /* Wider, more panoramic for desktop */
+    }
+}
+
+/* Contact Module */
+.contact-module {
+    padding: 80px 5%;
+    background-color: var(--white);
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* DM Section */
+
+.dm-highlight {
+    text-align: center;
+    background-color: var(--white);
+    border: 1px solid var(--sand-border);
+    color: var(--cocoa-brown);
+    padding: 40px 20px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+}
+
+.insta-icon-frame {
+    margin-bottom: 15px;
+    color: var(--taupe);
+}
+
+.dm-highlight h2 {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.dm-subtext {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.insta-link {
+    display: inline-block;
+    color: var(--taupe);
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-bottom: 2px solid var(--taupe);
+    padding-bottom: 2px;
+}
+
+/* Form Divider */
+.form-divider {
+    text-align: center;
+    margin: 40px 0;
+    position: relative;
+}
+
+.form-divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(72, 60, 50, 0.1);
+    z-index: 1;
+}
+
+.form-divider span {
+    position: relative;
+    z-index: 2;
+    background-color: var(--white);
+    padding: 0 15px;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: var(--taupe);
+    opacity: 0.5;
+}
+
+/* Form Styling */
+.inquiry-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.inquiry-form input,
+.inquiry-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid rgba(72, 60, 50, 0.1);
+    background-color: var(--cream);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.submit-btn {
+    background-color: var(--cocoa-brown);
+    color: var(--white);
+    border: none;
+    padding: 18px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+/* Footer */
+.main-footer {
+    padding: 60px 5% 40px;
+    text-align: center;
+    border-top: 1px solid rgba(72, 60, 50, 0.05);
+}
+
+.footer-logo {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.footer-tagline {
+    font-size: 0.8rem;
+    opacity: 0.6;
+    margin-bottom: 30px;
+}
+
+.footer-meta {
+    font-size: 0.7rem;
+    opacity: 0.4;
+}
+
+.footer-links {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: var(--taupe);
+    text-decoration: none;
+}
