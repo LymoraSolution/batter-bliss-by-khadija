@@ -22,7 +22,7 @@ body {
     color: var(--cocoa-brown);
     font-family: var(--font-sans);
     line-height: 1.6;
-        -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
 }
 
 /* Update your headings to match the logo weight */
@@ -32,6 +32,7 @@ h3 {
     font-family: var(--font-serif);
     letter-spacing: -0.02em;
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -42,7 +43,7 @@ html {
     scroll-behavior: smooth;
 }
 
-.modal-btn{
+.modal-btn {
     display: inline-block;
     padding: 12px 25px;
     background-color: var(--cocoa-brown);
@@ -65,6 +66,7 @@ html {
 .navbar {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     background: rgba(250, 247, 242, 0.95);
     /* Semi-transparent Cream */
@@ -78,9 +80,8 @@ html {
     display: flex;
     justify-content: flex-start;
     /* Pushes brand to the left */
+    padding: 0 20px;
     align-items: center;
-    width: 90%;
-    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -89,7 +90,7 @@ html {
     display: flex;
     align-items: center;
     text-decoration: none;
-    gap: 15px;
+    gap: 10px;
     /* Spacing between Logo and Title */
 }
 
@@ -122,10 +123,10 @@ html {
     }
 }
 
-/* style.css */
+/* Hero Section Styling */
 .hero {
     height: 85vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/assets/Visuals/heroBg.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)), url('/assets/Visuals/heroBg.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -134,9 +135,6 @@ html {
     text-align: center;
     color: var(--white);
     padding: 0 10%;
-}
-.hero-cta{
-    margin-top: 1rem;
 }
 
 .brand-tagline {
@@ -154,9 +152,14 @@ html {
     margin-bottom: 1.5rem;
 }
 
+.hero-cta {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 2rem;
+}
 .btn {
     display: inline-block;
-    
     padding: 1rem 2rem;
     border-radius: 50px;
     text-decoration: none;
@@ -164,50 +167,27 @@ html {
     transition: all 0.3s ease;
 }
 
-
-
 .btn-outline {
-    background-color: transparent;
-    border: 1px solid var(--warm-cream);
+    border: 2px solid var(--warm-cream);
     color: var(--warm-cream);
 }
-/* Updated Hero CTA Styles */
-.hero-cta {
-    display: flex;
-    gap: 15px;
-    /* Spacing between the two buttons */
-    justify-content: center;
-    margin-top: 2rem;
-}
 
-/* Primary Button (Solid Cocoa Brown) */
-
-
-/* Secondary Button (Outline Honey Gold) */
 .btn-secondary-outline {
-    background-color: transparent;
     color: var(--warm-cream);
-    /* */
-    border: 1px solid var(--warm-cream);
-    transition: all 0.3s ease;
+    border: 2px solid var(--warm-cream);
 }
 
+.btn-outline:hover,
+.btn-secondary-outline:hover {
+    background-color: var(--warm-cream);
+    color: var(--cocoa-brown);
+    box-shadow: 0 8px 15px rgba(72, 60, 50, 0.2);
+}
 
 
 /* Mobile Adjustment */
-@media (max-width: 480px) {
-    .hero-cta {
-        flex-direction: column;
-        /* Stacks buttons on small screens */
-        padding: 0 20px;
-    }
 
-    .btn {
-        width: 100%;
-        /* Full width buttons for easier thumb-tapping */
-        text-align: center;
-    }
-}
+
 
 /* Cakes Module Styling */
 .cakes-module {
@@ -240,6 +220,9 @@ html {
     /* Ensures text readability */
 }
 
+.bg-desktop-video {
+    display: none;
+}
 .video-header-content {
     position: relative;
     z-index: 2;
@@ -259,6 +242,7 @@ html {
     font-size: clamp(2rem, 5vw, 3.5rem);
     margin: 1rem 0;
 }
+
 .mini-divider,
 .short-line {
     background-color: var(--honey-gold);
@@ -291,12 +275,7 @@ html {
     overflow: hidden;
 }
 
-@media (min-width: 768px) {
-    .slideshow-frame {
-        aspect-ratio: 16/9;
-        /* Scales to wide-screen for desktop */
-    }
-}
+
 
 .slide {
     display: none;
@@ -355,7 +334,7 @@ html {
     background: var(--white);
 }
 
-
+/* **************************************************************************************************** */
 /* Treats Module */
 .treats-module {
     background-color: var(--cream);
@@ -405,6 +384,7 @@ html {
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 5%;
+
 }
 
 .slideshow-box {
@@ -555,50 +535,7 @@ html {
     margin: 0 auto;
 }
 
-/* Desktop Adjustment */
-@media (min-width: 768px) {
-    .packaging-caption {
-        position: absolute;
-        bottom: 30px;
-        right: 30px;
-        max-width: 350px;
-        text-align: left;
-        padding: 25px;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        border-radius: 10px;
-        border: none;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    }
 
-    .packaging-caption .tag {
-        margin-bottom: 5px;
-    }
-}
-
-/* Morning Module */
-.morning-module {
-    padding: 60px 0;
-    background-color: var(--cream);
-}
-
-.section-header-simple {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.tag-dark {
-    font-size: 0.7rem;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--taupe);
-    opacity: 0.6;
-}
-
-.short-line {
-    width: 30px;
-    margin: 10px auto;
-}
 
 /* Cinnamon Collage */
 .cinnamon-collage {
@@ -694,7 +631,8 @@ html {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
-.snap-item img, video {
+.snap-item img,
+video {
     width: 100%;
     aspect-ratio: 1/1;
     object-fit: cover;
@@ -984,6 +922,7 @@ html {
     color: var(--taupe);
     text-decoration: none;
 }
+
 /* Modal Overlay Background */
 .modal-overlay {
     display: none;
@@ -1069,5 +1008,5 @@ html {
     font-size: 30px;
     cursor: pointer;
     color: #4E3629;
-    /* */
+    
 }

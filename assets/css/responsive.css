@@ -1,0 +1,263 @@
+@media (max-width: 480px) {
+    .hero-cta {
+        flex-direction: column;
+        /* Stacks buttons on small screens */
+        padding: 0 20px;
+    }
+
+    .btn {
+        width: 100%;
+        /* Full width buttons for easier thumb-tapping */
+        text-align: center;
+    }
+}
+
+@media (min-width: 768px) {
+    .short-line {
+        width: 40vw;
+        margin: 0 auto;
+    }
+
+    .cakes-header-video {
+        background-color: #2D241E;
+        /* A deep, chocolate-taupe */
+        color: var(--white);
+        padding: 100px 20px;
+        text-align: center;
+        margin-bottom: -40px;
+        /* Slight overlap with slideshow */
+    }
+
+    .bg-desktop-video {
+        height: 60vh;
+        width: 30vw;
+        display: block;
+        border-radius: 2rem;
+    }
+
+    .bg-video {
+        display: none;
+    }
+
+    .portfolio-container {
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+
+    }
+
+    .slideshow-frame {
+        position: relative;
+        height: 60vh;
+        width: 30vw;
+    }
+
+    /* Treats Section */
+    .slideshow-wrapper {
+        height: 70vh;
+        display: flex;
+        justify-content: center;
+    }
+
+    .slideshow-box {
+        height: 60vh;
+    }
+
+    .packaging-highlight {
+        width: 100%;
+    }
+
+
+
+    .packaging-caption {
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        max-width: 350px;
+        text-align: left;
+        padding: 25px;
+        background: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        border: none;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .packaging-caption .tag {
+        margin-bottom: 5px;
+
+
+    }
+
+    /* Cinnamon Rolls Section */
+
+    .collage-text h3 {
+        font-family: var(--font-serif);
+        font-size: clamp(2rem, 5vw, 3rem);
+    }
+
+    .flavor-list {
+        width: 20vw;
+        list-style: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        font-size: 1rem;
+        margin-top: 15px;
+        font-weight: 500;
+    }
+
+    .collage-images {
+        position: relative;
+        aspect-ratio: 1/1;
+        width: 50vw;
+
+    }
+
+
+    /* Donuts Section */
+    .donut-peek-container {
+        max-width: 1200px;
+        margin: 4rem auto;
+        padding: 0 5%;
+    }
+
+    .donut-header h3 {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    /* Change from a scrolling row to a structured grid */
+    .snap-slider {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        /* 4 donuts in a row */
+        gap: 25px;
+        overflow: visible;
+        /* Disable scrolling */
+        padding-bottom: 0;
+    }
+
+    .snap-item {
+        flex: none;
+        /* Reset the mobile flex-basis */
+        width: 100%;
+        transition: all 0.4s ease;
+        border-radius: 20px;
+        /* Softer look for desktop */
+        cursor: pointer;
+    }
+
+    /* Add a "Magic" hover effect for desktop users */
+    .snap-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .snap-item img,
+    .snap-item video {
+        transition: transform 0.5s ease;
+    }
+
+    .snap-item:hover img,
+    .snap-item:hover video {
+        transform: scale(1.05);
+        /* Subtle zoom on the donut */
+    }
+
+    .snap-item span {
+        font-size: 1.1rem;
+        padding: 20px 10px;
+        background-color: var(--white);
+    }
+
+    /* Hide the mobile-only swipe hint */
+    .swipe-hint {
+        display: none;
+    }
+
+    /* Pizza Section */
+    .savory-module {
+        padding: 100px 0;
+        /* More breathing room for desktop */
+    }
+
+    /* 1. Header Refinement */
+    .savory-header {
+        margin-bottom: 50px;
+    }
+
+    .savory-header h2 {
+        font-size: 3.5rem;
+        /* Large, elegant serif heading */
+        letter-spacing: -1px;
+    }
+
+    .savory-intro {
+        font-size: 1.1rem;
+        max-width: 600px;
+        /* Wider text block for better readability */
+        line-height: 1.6;
+    }
+
+    .tag-dark {
+        font-size: 0.9rem;
+        letter-spacing: 4px;
+        margin-bottom: 15px;
+        display: inline-block;
+    }
+
+
+    .full-mobile {
+        display: flex;
+        justify-content: center;
+        height: 60vh;
+        border-radius: 20px;
+        /* Softer, more modern corners */
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+    }
+
+    .pizza-slide img {
+
+        transition: transform 0.8s ease;
+        object-fit: cover;
+    }
+
+    .desktop-hidden {
+        display: none !important;
+    }
+
+    /* 3. Overlay Typography Upgrade */
+    .slide-overlay-compact {
+        padding: 60px 40px 40px;
+        /* Larger padding */
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    }
+
+    .slide-overlay-compact h3 {
+        font-size: 2rem;
+        margin-bottom: 8px;
+    }
+
+    .slide-overlay-compact p {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+
+    /* 4. Navigation Controls */
+    .nav-controls-overlay button {
+        padding: 25px;
+        font-size: 1.5rem;
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-controls-overlay button:hover {
+        background: rgba(255, 255, 255, 0.9);
+        color: #000;
+    }
+
+
+}
