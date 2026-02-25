@@ -1,100 +1,59 @@
-let currentCakeSlide = 0;
-const cakeSlides = document.querySelectorAll('#cakes-slides .slide');
-
-function moveSlide(direction) {
-    // Hide current slide
-    cakeSlides[currentCakeSlide].classList.remove('active');
-
-    // Calculate next index
-    currentCakeSlide = (currentCakeSlide + direction + cakeSlides.length) % cakeSlides.length;
-
-    // Show new slide
-    cakeSlides[currentCakeSlide].classList.add('active');
-}
-window.addEventListener('load', () => {
-    const modal = document.getElementById("welcome-modal");
-    const closeX = document.querySelector(".close-modal");
-    const exploreBtn = document.getElementById("explore-btn");
-
-    // Small delay to ensure the site background is visible first
-    setTimeout(() => {
-        modal.style.display = "block";
-    }, 500);
-
-    // Function to close modal
-    const hideModal = () => {
-        modal.style.display = "none";
-    };
-
-    closeX.onclick = hideModal;
-    exploreBtn.onclick = hideModal;
-
-    // Close if user clicks the dark backdrop
-    window.onclick = (event) => {
-        if (event.target == modal) {
-            hideModal();
-        }
-    };
-});
-
-// Optional: Auto-play every 5 seconds
-setInterval(() => {
-    moveSlide(1);
-}, 5000);
-
-// Logic for Treats Slideshow
-let currentTreatSlide = 0;
-const treatSlides = document.querySelectorAll('#treat-gallery .t-slide');
-
-function changeTreatSlide(direction) {
-    // Hide current
-    treatSlides[currentTreatSlide].classList.remove('active');
-
-    // Cycle index
-    currentTreatSlide = (currentTreatSlide + direction + treatSlides.length) % treatSlides.length;
-
-    // Show new
-    treatSlides[currentTreatSlide].classList.add('active');
-}
-
-// Separate Auto-play for Treats
-setInterval(() => {
-    changeTreatSlide(1);
-}, 6000); // 6 seconds to offset it from the Cakes slideshow
-
-
-// Updated indices to include Pizza
-let slideIndices = {
-    "cakes-slideshow": 1,
-    "treats-slideshow": 1,
-    "pizza-slideshow": 1
+// 1. Universal Slideshow Controller
+const slideStates = {
+    "cakes-slideshow": 0,
+    "treats-slideshow": 0,
+    "pizza-slideshow": 0
 };
 
-// Initialize all
-showSlides(1, "cakes-slideshow");
-showSlides(1, "treats-slideshow");
-showSlides(1, "pizza-slideshow");
-
-function moveSlides(n, slideshowId) {
-    showSlides(slideIndices[slideshowId] += n, slideshowId);
-}
-
-function showSlides(n, slideshowId) {
-    let i;
+function moveSlides(direction, slideshowId, className = "slides") {
     const container = document.getElementById(slideshowId);
     if (!container) return;
 
-    const slides = container.getElementsByClassName("slides");
+    const slides = container.getElementsByClassName(className);
+    if (slides.length === 0) return;
 
-    if (n > slides.length) { slideIndices[slideshowId] = 1; }
-    if (n < 1) { slideIndices[slideshowId] = slides.length; }
+    // Hide current slide
+    slides[slideStates[slideshowId]].style.display = "none";
+    slides[slideStates[slideshowId]].classList.remove('active');
 
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
+    // Calculate next index using modulo for wrapping
+    slideStates[slideshowId] = (slideStates[slideshowId] + direction + slides.length) % slides.length;
 
-    slides[slideIndices[slideshowId] - 1].style.display = "block";
+    // Show next slide
+    slides[slideStates[slideshowId]].style.display = "block";
+    slides[slideStates[slideshowId]].classList.add('active');
 }
 
-// Auto-play the Pizza gallery every 7 seconds
-setInterval(() => moveSlides(1, "pizza-slideshow"), 7000);
+// 2. Initialization and Event Listeners
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize all slides to hide others except the first
+    Object.keys(slideStates).forEach(id => {
+        const container = document.getElementById(id);
+        if (container) {
+            const slides = container.querySelectorAll('.slides, .slide, .t-slide');
+            Array.from(slides).forEach((s, i) => s.style.display = i === 0 ? "block" : "none");
+        }
+    });
+
+    // Modal Logic
+    const modal = document.getElementById("welcome-modal");
+    const closeElements = document.querySelectorAll(".close-modal, #explore-btn");
+
+    if (modal) {
+        setTimeout(() => modal.style.display = "block", 500);
+
+        closeElements.forEach(el => {
+            el.onclick = () => modal.style.display = "none";
+        });
+
+        window.onclick = (event) => {
+            if (event.target === modal) modal.style.display = "none";
+        };
+    }
+
+    // 3. Efficient Intervals
+    // Using slightly offset times to prevent CPU spikes from simultaneous transitions
+    setInterval(() => moveSlides(1, "cakes-slideshow", "slide"), 5000);
+    setInterval(() => moveSlides(1, "treats-slideshow", "t-slide"), 6000);
+    setInterval(() => moveSlides(1, "pizza-slideshow", "slides"), 7000);
+});
