@@ -42,6 +42,19 @@ html {
     scroll-behavior: smooth;
 }
 
+.modal-btn{
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: var(--cocoa-brown);
+    color: var(--white);
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+}
+
 .slide img,
 .pizza-slide img {
     filter: sepia(10%) contrast(105%);
@@ -681,7 +694,7 @@ html {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
-.snap-item img {
+.snap-item img, video {
     width: 100%;
     aspect-ratio: 1/1;
     object-fit: cover;
@@ -970,4 +983,91 @@ html {
 .footer-links a {
     color: var(--taupe);
     text-decoration: none;
+}
+/* Modal Overlay Background */
+.modal-overlay {
+    display: none;
+    /* Hidden by default, triggered by JS */
+    position: fixed;
+    z-index: 3000;
+    /* Above the navbar */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(78, 54, 41, 0.6);
+    /* Cocoa Brown overlay */
+    backdrop-filter: blur(4px);
+}
+
+/* Modal Box */
+.modal-content {
+    background-color: #FAF7F2;
+    /* Warm Cream */
+    margin: 0 auto;
+    padding: 50px 30px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 0 0 25px 25px;
+    /* Flat top, rounded bottom for the slide-down feel */
+    position: relative;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+
+    /* Slide Down Animation */
+    animation: slideDown 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Typography & Elements */
+.modal-header h2 {
+    font-family: 'Playfair Display', serif;
+    color: #4E3629;
+    /* Cocoa Brown */
+    margin: 10px 0;
+}
+
+.highlight-text {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #4E3629;
+    /* */
+    margin-bottom: 20px;
+}
+
+.category-list {
+    font-size: 0.9rem;
+    color: #7A6A5E;
+    /* Soft Taupe */
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.closing-statement {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #C5A059;
+    /* Honey Gold accent */
+    font-size: 1rem;
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #4E3629;
+    /* */
 }

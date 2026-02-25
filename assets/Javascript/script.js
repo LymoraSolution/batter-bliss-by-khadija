@@ -11,6 +11,31 @@ function moveSlide(direction) {
     // Show new slide
     cakeSlides[currentCakeSlide].classList.add('active');
 }
+window.addEventListener('load', () => {
+    const modal = document.getElementById("welcome-modal");
+    const closeX = document.querySelector(".close-modal");
+    const exploreBtn = document.getElementById("explore-btn");
+
+    // Small delay to ensure the site background is visible first
+    setTimeout(() => {
+        modal.style.display = "block";
+    }, 500);
+
+    // Function to close modal
+    const hideModal = () => {
+        modal.style.display = "none";
+    };
+
+    closeX.onclick = hideModal;
+    exploreBtn.onclick = hideModal;
+
+    // Close if user clicks the dark backdrop
+    window.onclick = (event) => {
+        if (event.target == modal) {
+            hideModal();
+        }
+    };
+});
 
 // Optional: Auto-play every 5 seconds
 setInterval(() => {
